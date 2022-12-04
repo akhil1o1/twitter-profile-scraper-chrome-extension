@@ -8,6 +8,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if(request.profileData) {
   let data = JSON.stringify(request.profileData);
 
+  // dowloading as json data
   let blob = new Blob([data], {type: "application/json;charset=utf-8"});
   let objectURL = URL.createObjectURL(blob);
   chrome.downloads.download({ url: objectURL, filename: ('content/data.json'), conflictAction: 'overwrite' });

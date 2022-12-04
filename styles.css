@@ -23,3 +23,11 @@ body {
   cursor: pointer;
 }
 
+#scrape-button:hover{
+  border: 2px solid rgb(245, 195, 102);
+}
+
+#scrape-button:active{
+  transform:scale(0.9, 0.9);
+}
+
