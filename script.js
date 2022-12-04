@@ -1,5 +1,6 @@
 const scrapeButton = document.getElementById("scrape-button");
 
+// background.js..............................
 // handler to recieve profile data passed by content script.
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   
@@ -19,13 +20,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 alert("Please make sure you are on a twitter user's profile page.");
 });
 
+
+// popup.js..................................................
 // scrapeButton click event listener
 scrapeButton.addEventListener("click", async () => {
   // get the current active tab
   let [tab] = await chrome.tabs.query({
     active: true,
     currentWindow: true,
-  });
+});
 
   // execute script to extract profile data.
   chrome.scripting.executeScript({
@@ -34,16 +37,19 @@ scrapeButton.addEventListener("click", async () => {
   });
 });
 
+
+
 // function/content-script that will run on the webpage to extract profile data
 
 function scrapeProfileData() {
+
   const profileName = document.getElementsByClassName(
     "css-901oao r-1awozwy r-18jsvk2 r-6koalj r-37j5jr r-adyw6z r-1vr29t4 r-135wba7 r-bcqeeo r-1udh08x r-qvutc0"
   )[0].innerText;
 
   const profileId = document.getElementsByClassName(
     "css-901oao css-1hf3ou5 r-14j79pv r-18u37iz r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-qvutc0"
-  )[0]?.innerText;
+  )[1]?.innerText;
 
   let twitterUrl = `https://twitter.com/${profileId}`;
 
