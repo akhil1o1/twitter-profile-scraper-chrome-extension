@@ -1,0 +1,10 @@
+{
+    "name": "twitter profile scraper",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "description": "scrapes profile data from twitter profile.",
+    "action":{
+        "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab", "scripting"]
+}

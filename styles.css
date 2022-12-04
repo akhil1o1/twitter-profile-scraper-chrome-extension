@@ -1,0 +1,25 @@
+body {
+  min-width: 300px;
+  min-height: 300px;
+  padding: 10px;
+  background-color: rgba(250, 235, 215, 0.151);
+  font-size: 14px;
+}
+.container {
+  background-color: rgb(236, 239, 241);
+  padding: 10px;
+}
+.container h2 {
+  color: blue;
+}
+
+#scrape-button {
+  background-color: rgba(124, 108, 54, 0.397);
+  padding: 10px;
+  border: 2px solid wheat;
+  color: rgb(12, 12, 145);
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
